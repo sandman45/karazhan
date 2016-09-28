@@ -1,22 +1,25 @@
 
 <body>
-<div class="container">
     <head>
         <title>Karazhan</title>
     </head>
 
-    <form class="new-task">
-        <input type="text" name="text" placeholder="Type to add new tasks"/>
-    </form>
+    {{> navbar}}
 
-    <ul>
-        {{#each tasks}}
-            {{> task}}
-        {{/each}}
-    </ul>
-</div>
+    <div class="container">
+
+        <div class="home-image">
+            {{> homeImage}}
+        </div>
+
+        <hr>
+
+        <form class="new-task">
+            <input type="text" name="text" placeholder="Type to add new tasks"/>
+        </form>
+
+        <hr>
+
+        {{> taskList}}
+    </div>
 </body>
-
-<template name="task">
-    <li>{{text}} : {{createdAt}}</li>
-</template>

@@ -1,13 +1,16 @@
 import { Template } from 'meteor/templating';
 
-import { Tasks } from '../lib/collections/tasks.js';
-
+import { Tasks } from '/lib/collections/tasks.js';
+import { Users } from '/lib/collections/tasks.js';
 import './main.html';
 
 Template.body.helpers({
     tasks(){
         return Tasks.find({});
     },
+    users(){
+        return Users.find({});
+    }
 });
 
 Template.body.events({
