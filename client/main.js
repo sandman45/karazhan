@@ -32,3 +32,5 @@ Template.body.events({
         target.text.value = '';
     }
 });
+
+Router.route('/', function () {});
