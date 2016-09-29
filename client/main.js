@@ -1,15 +1,11 @@
 import { Template } from 'meteor/templating';
-
 import { Tasks } from '/lib/collections/tasks.js';
-import { Users } from '/lib/collections/tasks.js';
+import './accounts/accounts-config.js';
 import './main.html';
 
 Template.body.helpers({
-    tasks(){
-        return Tasks.find({});
-    },
-    users(){
-        return Users.find({});
+    incompleteCount() {
+        return Tasks.find({ checked: { $ne: true } }).count();
     }
 });
 
@@ -25,7 +21,10 @@ Template.body.events({
         // Insert a task into the collection
         Tasks.insert({
             text,
-            createdAt: new Date(), // current time
+            checked:false,
+            owner: Meteor.userId(),
+            username: Meteor.user().username,
+            createdAt: new Date()
         });
 
         // Clear form
@@ -33,4 +32,6 @@ Template.body.events({
     }
 });
 
-Router.route('/', function () {});
+Router.route('/', function () {
+    this.next();
+});

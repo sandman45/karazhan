@@ -1,4 +1,8 @@
 <template name="taskList">
+    <label class="hide-completed">
+        <input type="checkbox"/>
+        Hide Completed Tasks
+    </label>
     <div class="task-list">
         <ul>
             {{#each tasks}}

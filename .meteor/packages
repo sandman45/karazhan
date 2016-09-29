@@ -25,3 +25,8 @@ momentjs:moment
 underscore
 iron:router
 cloudant:couchdb
+reactive-dict
+logging
+session
+accounts-ui
+accounts-password
