@@ -8,18 +8,17 @@
 
     <div class="container">
 
-        <div class="home-image">
-            {{> homeImage}}
-        </div>
+        {{> homeImage}}
 
+        {{#if currentUser}}
+            <hr>
+            <h1>Todo List ({{incompleteCount}})</h1>
+            <form class="new-task">
+                <input type="text" name="text" placeholder="Type to add new tasks"/>
+            </form>
         <hr>
-
-        <form class="new-task">
-            <input type="text" name="text" placeholder="Type to add new tasks"/>
-        </form>
-
-        <hr>
-
         {{> taskList}}
+        {{/if}}
+
     </div>
 </body>

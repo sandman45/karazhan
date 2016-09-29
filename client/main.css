@@ -253,3 +253,7 @@ body {
 .user-item{
     color: #666666;
 }
+
+.hide-completed{
+    color:white;
+}
