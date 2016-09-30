@@ -28,3 +28,4 @@ logging
 session
 accounts-ui
 accounts-password
+practicalmeteor:mocha
