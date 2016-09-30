@@ -8,6 +8,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 Template.taskList.onCreated(function onCreated(){
     this.state = new ReactiveDict();
     Meteor.subscribe('tasks');
+    Meteor.subscribe('users');
 });
 
 Template.taskList.events({
