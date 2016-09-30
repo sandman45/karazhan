@@ -3,6 +3,8 @@ import { Tasks } from '/lib/collections/tasks.js';
 import './accounts/accounts-config.js';
 import './main.html';
 
+
+
 Template.body.helpers({
     incompleteCount() {
         return Tasks.find({ checked: { $ne: true } }).count();
