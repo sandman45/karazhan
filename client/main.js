@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Tasks } from '/lib/collections/tasks.js';
+import { Info } from '/lib/collections/information-api';
 import './accounts/accounts-config.js';
 import './main.html';
 
@@ -25,6 +26,15 @@ Template.body.events({
 
         // Clear form
         target.text.value = '';
+    },
+    'click .getInfo'(event){
+        event.preventDefault();
+        const id = '1';
+        Meteor.call('checkTwitter',id);
+    },
+    'click .sendEmail'(event){
+        event.preventDefault();
+        Meteor.call('sendEmail','msanders45@gmail.com','msanders@silvervue.com','test email','hey this is a test email');
     }
 });
 

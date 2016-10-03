@@ -29,3 +29,5 @@ session
 accounts-ui
 accounts-password
 practicalmeteor:mocha
+http
+email

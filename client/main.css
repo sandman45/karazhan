@@ -257,3 +257,11 @@ body {
 .hide-completed{
     color:white;
 }
+
+.getInfo, .sendEmail{
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px;
+    border-radius:5px;
+    text-align: center;
+}
